@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/DanaBida/ShapesDrawer/issues"
   },
-  "homepage": "https://github.com/DanaBida/ShapesDrawer#readme"
+  "homepage": "https://github.com/DanaBida/ShapesDrawer#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }

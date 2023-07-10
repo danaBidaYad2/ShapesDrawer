@@ -1,5 +1,5 @@
 {
-  "name": "drawing-shapes",
+  "name": "shapes-drawer",
   "version": "1.0.0",
   "description": "randomized shape and color supplier",
   "main": "index.js",

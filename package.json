@@ -1,0 +1,19 @@
+{
+  "name": "drawing-shapes",
+  "version": "1.0.0",
+  "description": "randomized shape and color supplier",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanaBida/ShapesDrawer.git"
+  },
+  "author": "Dana Bida",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanaBida/ShapesDrawer/issues"
+  },
+  "homepage": "https://github.com/DanaBida/ShapesDrawer#readme"
+}

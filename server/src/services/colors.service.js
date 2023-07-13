@@ -5,6 +5,6 @@ export class ColorsService {
 
   getColor = async () => {
     console.log('getColor called');
-    return randomElemFromArr(this.shapes);
+    return randomElemFromArr(this.colors);
   };
 }

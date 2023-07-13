@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  tools:
+    image: shapes-drawer/tools
+    build: ./tools
+    container_name: tools
+    networks:
+      - shapes-drawer
+    logging:
+      driver: local
+  frontend:
+    image: shapes-drawer/frontend
+    build: ./frontend
+    container_name: frontend
+    networks:
+      - shapes-drawer
+    logging:
+      driver: local
+
+networks:
+  shapes-drawer:
+    driver: bridge

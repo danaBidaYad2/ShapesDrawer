@@ -1,0 +1,6 @@
+{
+  "watch": ["src"],
+  "exec": "node --inspect=5998 main.js",
+  "ext": "js",
+  "ignoreRoot": ["public"]
+}

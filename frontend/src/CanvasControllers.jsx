@@ -1,13 +1,13 @@
 import React from 'react';
-import { Grid } from '@mui/material';
 import Button from '@mui/material/Button';
+import Grid from '@mui/material/Grid';
+import { CanvasControllersGrid } from './styles/canvasControllers.styles';
 
 export const CanvasControllers = () => {
   return (
-    <Grid container>
-      <Grid item xs={12} sm={6} md={4}>
+    <CanvasControllersGrid container>
+      <Grid item xs={2} sm={3} md={4}>
         <Button
-          // startIcon={<DeleteIcon />}
           color='error'
           onClick={() => {
             console.log('reset');
@@ -16,9 +16,8 @@ export const CanvasControllers = () => {
           Reset
         </Button>
       </Grid>
-      <Grid item xs={12} sm={6} md={4}>
+      <Grid item xs={5} sm={5} md={5}>
         <Button
-          // startIcon={<DeleteIcon />}
           color='primary'
           onClick={() => {
             console.log('random shape');
@@ -27,9 +26,8 @@ export const CanvasControllers = () => {
           Choose Random Shape
         </Button>
       </Grid>
-      <Grid item xs={12} sm={6} md={4}>
+      <Grid item xs={5} sm={4} md={3}>
         <Button
-          // startIcon={<DeleteIcon />}
           color='secondary'
           onClick={() => {
             console.log('random color');
@@ -38,6 +36,6 @@ export const CanvasControllers = () => {
           Choose Random Color
         </Button>
       </Grid>
-    </Grid>
+    </CanvasControllersGrid>
   );
 };

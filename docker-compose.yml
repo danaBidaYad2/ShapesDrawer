@@ -1,15 +1,23 @@
 version: '3.8'
 services:
-  tools:
-    image: shapes-drawer/tools
-    build: ./tools
-    container_name: tools
+  randomizer:
+    image: shapes-drawer/randomizer
+    ports:
+      - 8080:8080
+    environment:
+      - PORT=8080
+    build: ./randomizer
+    container_name: randomizer
     networks:
       - shapes-drawer
     logging:
       driver: local
   frontend:
     image: shapes-drawer/frontend
+    ports:
+      - 3000:3000
+    environment:
+      - PORT=3000
     build: ./frontend
     container_name: frontend
     networks:

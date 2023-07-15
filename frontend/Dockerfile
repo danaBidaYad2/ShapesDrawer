@@ -9,7 +9,8 @@ COPY *.json ./
 RUN npm ci
 
 # Bundle app source
-COPY . .
+COPY src .
+COPY public .
 
 # Build the webpack app
 RUN npm run build

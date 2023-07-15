@@ -1,4 +1,4 @@
-import { config } from '../config.js';
+import { config } from './config.js';
 import { appController } from './controllers/app.controller.js';
 import { errorMiddleware } from './middlewares/error.middleware.js';
 import express from 'express';

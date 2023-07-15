@@ -8,8 +8,8 @@ import { AppContext } from './App';
 
 export const CanvasControllers = () => {
   const { setColor, setShape } = useContext(AppContext);
-  const { refetch: refetchShapeData } = useShapeData((response) => setShape(response.data), false);
-  const { refetch: refetchColorData } = useColorData((response) => setColor(response.data), false);
+  const { refetch: refetchShapeData } = useShapeData((response) => setShape(response.data), true);
+  const { refetch: refetchColorData } = useColorData((response) => setColor(response.data), true);
 
   const reset = useCallback(() => {
     setColor('');
@@ -24,7 +24,7 @@ export const CanvasControllers = () => {
         </Button>
       </Grid>
       <Grid item xs={5} sm={5} md={5}>
-        <Button color='primary' onClick={refetchShapeData()}>
+        <Button color='primary' onClick={refetchShapeData}>
           Choose Random Shape
         </Button>
       </Grid>

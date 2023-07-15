@@ -2,7 +2,7 @@ import React, { createContext, useState } from 'react';
 import { CanvasControllers } from './CanvasControllers';
 import { Canvas } from './Canvas';
 import { StyledContainer } from '../styles/app.styles';
-import { QueryClient, QueryClientProvider } from 'react-query';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 export const AppContext = createContext();
 const queryClient = new QueryClient();

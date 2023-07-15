@@ -1,6 +1,6 @@
-import { config } from './config.js';
 import { appController } from './controllers/app.controller.js';
 import { errorMiddleware } from './middlewares/error.middleware.js';
+import { config } from './config.js';
 import express from 'express';
 import cors from 'cors';
 

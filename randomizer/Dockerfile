@@ -11,4 +11,4 @@ RUN npm ci --omit=dev
 # Bundle app source
 COPY . .
 
-CMD ["node", "src/main.js"]
+CMD ["npm", "start"]

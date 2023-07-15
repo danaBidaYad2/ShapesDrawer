@@ -6,15 +6,14 @@ import { useColorData } from '../hooks/useColorData';
 import { useShapeData } from '../hooks/useShapeData';
 import { AppContext, queryClient } from './App';
 
-export const CanvasControllers = () => {
+export const CanvasControllers = React.forwardRef((_, { contextRef, canvasRef }) => {
   const { setColor, setShape } = useContext(AppContext);
   useShapeData((response) => setShape(response.data), false);
   useColorData((response) => setColor(response.data), false);
 
   const reset = useCallback(() => {
-    setColor('');
-    setShape('');
-  }, [setColor, setShape]);
+    contextRef.current.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
+  }, [contextRef, canvasRef]);
 
   const onRandomShapeClicked = useCallback(() => {
     queryClient.refetchQueries({ queryKey: ['shape'] });
@@ -43,4 +42,4 @@ export const CanvasControllers = () => {
       </Grid>
     </CanvasControllersGrid>
   );
-};
+});

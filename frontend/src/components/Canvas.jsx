@@ -3,7 +3,7 @@ import { CanvasGrid, CanvasInfoGrid, CanvasBoardGrid } from '../styles/canvas.st
 import { AppContext } from './App';
 import { CanvasBoard } from './CanvasBoard';
 
-export const Canvas = () => {
+export const Canvas = React.forwardRef((_, ref) => {
   const { color, shape } = useContext(AppContext);
 
   return (
@@ -15,8 +15,8 @@ export const Canvas = () => {
         Shape: {shape}
       </CanvasInfoGrid>
       <CanvasBoardGrid item xs={12} sm={12} md={12}>
-        <CanvasBoard />
+        <CanvasBoard ref={ref} />
       </CanvasBoardGrid>
     </CanvasGrid>
   );
-};
+});

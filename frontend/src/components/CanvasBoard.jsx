@@ -1,11 +1,9 @@
-import React, { useContext, useRef, useState, useEffect, useCallback } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { StyledCanvas } from '../styles/canvas.styles';
 import { AppContext } from './App';
 
-export const CanvasBoard = () => {
+export const CanvasBoard = React.forwardRef((_, { contextRef, canvasRef }) => {
   const { color, shape } = useContext(AppContext);
-  const canvasRef = useRef(null);
-  const contextRef = useRef(null);
   let isDrawing = false,
     startX,
     startY;
@@ -64,10 +62,5 @@ export const CanvasBoard = () => {
     isDrawing = false;
   };
 
-  const clearCanvas = () => {
-    let context = contextRef.current;
-    context.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
-  };
-
   return <StyledCanvas width={1000} height={600} ref={canvasRef} />;
-};
+});

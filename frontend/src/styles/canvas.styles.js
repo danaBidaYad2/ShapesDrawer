@@ -26,6 +26,6 @@ export const CanvasBoardGrid = styled(Grid)`
 `;
 
 export const StyledCanvas = styled.canvas`
-  background-color: pink;
+  background-color: black;
   border: '1px solid black';
 `;

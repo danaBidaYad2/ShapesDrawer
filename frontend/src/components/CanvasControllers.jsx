@@ -4,17 +4,25 @@ import Grid from '@mui/material/Grid';
 import { CanvasControllersGrid } from '../styles/canvasControllers.styles';
 import { useColorData } from '../hooks/useColorData';
 import { useShapeData } from '../hooks/useShapeData';
-import { AppContext } from './App';
+import { AppContext, queryClient } from './App';
 
 export const CanvasControllers = () => {
   const { setColor, setShape } = useContext(AppContext);
-  const { refetch: refetchShapeData } = useShapeData((response) => setShape(response.data), true);
-  const { refetch: refetchColorData } = useColorData((response) => setColor(response.data), true);
+  useShapeData((response) => setShape(response.data), false);
+  useColorData((response) => setColor(response.data), false);
 
   const reset = useCallback(() => {
     setColor('');
     setShape('');
   }, [setColor, setShape]);
+
+  const onRandomShapeClicked = useCallback(() => {
+    queryClient.refetchQueries({ queryKey: ['shape'] });
+  }, []);
+
+  const onRandomColorClicked = useCallback(() => {
+    queryClient.refetchQueries({ queryKey: ['color'] });
+  }, []);
 
   return (
     <CanvasControllersGrid container>
@@ -24,12 +32,12 @@ export const CanvasControllers = () => {
         </Button>
       </Grid>
       <Grid item xs={5} sm={5} md={5}>
-        <Button color='primary' onClick={refetchShapeData}>
+        <Button color='primary' onClick={onRandomShapeClicked}>
           Choose Random Shape
         </Button>
       </Grid>
       <Grid item xs={5} sm={4} md={3}>
-        <Button color='secondary' onClick={refetchColorData}>
+        <Button color='secondary' onClick={onRandomColorClicked}>
           Choose Random Color
         </Button>
       </Grid>

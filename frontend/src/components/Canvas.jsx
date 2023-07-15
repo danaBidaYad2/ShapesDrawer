@@ -1,22 +1,22 @@
 import React, { useContext } from 'react';
-import { CanvasGrid } from '../styles/canvas.styles';
-import Grid from '@mui/material/Grid';
+import { CanvasGrid, CanvasInfoGrid, CanvasBoardGrid } from '../styles/canvas.styles';
 import { AppContext } from './App';
+import { CanvasBoard } from './CanvasBoard';
 
 export const Canvas = () => {
   const { color, shape } = useContext(AppContext);
 
   return (
     <CanvasGrid container>
-      <Grid item xs={12} sm={6} md={6}>
+      <CanvasInfoGrid item xs={12} sm={6} md={6}>
         Color: {color}
-      </Grid>
-      <Grid item xs={12} sm={6} md={6}>
+      </CanvasInfoGrid>
+      <CanvasInfoGrid item xs={12} sm={6} md={6}>
         Shape: {shape}
-      </Grid>
-      <Grid item xs={12} sm={12} md={12}>
-        Canvas
-      </Grid>
+      </CanvasInfoGrid>
+      <CanvasBoardGrid item xs={12} sm={12} md={12}>
+        <CanvasBoard />
+      </CanvasBoardGrid>
     </CanvasGrid>
   );
 };

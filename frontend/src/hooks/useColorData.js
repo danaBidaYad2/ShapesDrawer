@@ -5,7 +5,8 @@ export const useColorData = async (onSuccess, fetchOnCompMount) => {
   return useQuery({
     queryKey: ['color'],
     queryFn: fetchColor,
-    enabled: fetchOnCompMount,
+    refetchOnMount: fetchOnCompMount,
+    // enabled: false,
     onSuccess,
     onError: (error) => console.log('failed to get color with err: ', error),
   });

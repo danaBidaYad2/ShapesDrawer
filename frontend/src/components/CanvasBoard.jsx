@@ -25,7 +25,7 @@ export const CanvasBoard = () => {
       canvas.removeEventListener('mousedown', handleMouseDown);
       canvas.removeEventListener('mouseup', handleMouseUp);
     };
-  }, []);
+  }, [color, shape]);
 
   const handleMouseDown = (event) => {
     startX = event.offsetX;

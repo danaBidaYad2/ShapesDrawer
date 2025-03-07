@@ -7,7 +7,7 @@ export const colorsController = express.Router();
 
 colorsController.get('/', async (_, res) => {
   try {
-    const color = await colorsService.getColor();
+    const color = colorsService.getColor();
     res.status(200).send(color);
   } catch (e) {
     res.status(500).send(e.message);

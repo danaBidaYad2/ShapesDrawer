@@ -1,0 +1,18 @@
+[
+    {
+        "id": 0,
+        "name": "line"
+    },
+    {
+        "id": 1,
+        "name": "triangle"
+    },
+    {
+        "id": 2,
+        "name": "rectangle"
+    },
+    {
+        "id": 3,
+        "name": "circle"
+    }
+]

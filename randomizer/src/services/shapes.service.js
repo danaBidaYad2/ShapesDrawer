@@ -1,9 +1,7 @@
 import { randomElemFromArr } from '../utils/random.js';
-
+import shapes from '../db/shapes/shapes.json' with { type: "json" };
 export class ShapesService {
-  shapes = ['line', 'triangle', 'rectangle', 'circle'];
-
-  getShape = async () => {
-    return randomElemFromArr(this.shapes);
+  getShape = () => {
+    return randomElemFromArr(shapes);
   };
 }

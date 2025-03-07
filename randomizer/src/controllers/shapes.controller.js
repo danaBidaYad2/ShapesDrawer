@@ -7,7 +7,7 @@ export const shapesController = express.Router();
 
 shapesController.get('/', async (_, res) => {
   try {
-    const shape = await shapesService.getShape();
+    const shape = shapesService.getShape();
     res.status(200).send(shape);
   } catch (e) {
     res.status(500).send(e.message);

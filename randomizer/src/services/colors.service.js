@@ -1,9 +1,7 @@
 import { randomElemFromArr } from '../utils/random.js';
-
+import colors from '../db/colors/colors.json' with { type: "json" };
 export class ColorsService {
-  colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
-
-  getColor = async () => {
-    return randomElemFromArr(this.colors);
+  getColor = () => {
+    return randomElemFromArr(colors);
   };
 }
